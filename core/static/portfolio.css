@@ -1,0 +1,1019 @@
+/* =========================================
+   KINGDOO CONCEPTS
+   PORTFOLIO PAGE
+========================================= */
+
+:root {
+    --background: #284F90;
+    --accent: #EFB029;
+    --white: #FFFFFF;
+}
+
+
+/* =========================================
+   RESET
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--background);
+    color: var(--white);
+    overflow-x: hidden;
+}
+
+
+button,
+a {
+    font-family: inherit;
+}
+
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* =========================================
+   PORTFOLIO PAGE
+========================================= */
+
+.portfolio-page {
+    position: relative;
+
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    background: var(--background);
+
+    color: var(--white);
+}
+
+
+/* =========================================
+   NAVIGATION
+========================================= */
+
+.navbar {
+    width: 100%;
+
+    padding: 32px 6%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/* =========================================
+   BRAND
+========================================= */
+
+.brand {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 0.8;
+    letter-spacing: 2px;
+    color: var(--white);
+}
+
+.brand span {
+    margin-top: 7px;
+    font-family: 'Inter', sans-serif;
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 5px;
+    color: var(--accent);
+}
+
+
+/* =========================================
+   NAVIGATION LINKS
+========================================= */
+
+.navigation {
+    display: flex;
+    align-items: center;
+
+    gap: 48px;
+
+    margin-left: auto;
+    margin-right: 45px;
+}
+
+
+.navigation a {
+    position: relative;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+
+    color: var(--white);
+
+    transition: color 0.3s ease;
+}
+
+
+.navigation a:hover {
+    color: var(--accent);
+}
+
+
+.navigation a::after {
+    content: '';
+
+    position: absolute;
+
+    left: 0;
+    bottom: -8px;
+
+    width: 0;
+    height: 2px;
+
+    background: var(--accent);
+
+    transition: width 0.3s ease;
+}
+
+
+.navigation a:hover::after {
+    width: 100%;
+}
+
+
+/* =========================================
+   SOCIAL ICONS
+========================================= */
+
+.social-icons {
+    display: flex;
+    align-items: center;
+
+    gap: 18px;
+}
+
+
+.social-icons a {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(255, 255, 255, 0.65);
+
+    border-radius: 50%;
+
+    color: var(--white);
+
+    font-size: 15px;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+.social-icons a:hover {
+    background: var(--accent);
+
+    border-color: var(--accent);
+
+    color: var(--background);
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================================
+   PORTFOLIO SECTION
+========================================= */
+
+.portfolio-section {
+    flex: 1;
+
+    width: 100%;
+
+    padding: 70px 6% 80px;
+}
+
+
+/* =========================================
+   HEADING
+========================================= */
+
+.portfolio-heading {
+    max-width: 700px;
+
+    margin-bottom: 55px;
+}
+
+
+.portfolio-heading .eyebrow {
+    margin-bottom: 15px;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 5px;
+
+    color: var(--accent);
+}
+
+
+.portfolio-heading h1 {
+    margin-bottom: 18px;
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: clamp(55px, 7vw, 95px);
+
+    font-weight: 500;
+
+    line-height: 0.9;
+
+    letter-spacing: -2px;
+
+    color: var(--white);
+}
+
+
+.portfolio-heading > p:last-child {
+    max-width: 500px;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+
+    color: var(--white);
+
+    opacity: 0.85;
+}
+
+
+/* =========================================
+   CATEGORY CARDS
+========================================= */
+
+.portfolio-categories {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 18px;
+}
+
+
+.portfolio-card {
+    position: relative;
+    z-index: 0;
+
+    aspect-ratio: var(--card-ratio, 4 / 5);
+    min-height: 0;
+    overflow: hidden;
+
+    padding: 28px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    text-align: left;
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+
+    background: rgba(19, 51, 94, 0.92);
+    color: var(--white);
+
+    cursor: pointer;
+
+    transition:
+        background 0.35s ease,
+        border-color 0.35s ease,
+        transform 0.35s ease;
+}
+
+.portfolio-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(10, 17, 27, 0.14), rgba(9, 16, 29, 0.65));
+    transition: background 0.35s ease;
+    z-index: 1;
+}
+
+.portfolio-card::after {
+    position: absolute;
+    inset: 0;
+    background: var(--card-image, none) center/cover no-repeat;
+    content: "";
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 0;
+}
+
+.portfolio-card.has-preview::after {
+    opacity: 1;
+}
+
+.portfolio-card > * {
+    position: relative;
+    z-index: 2;
+}
+
+.portfolio-card:hover {
+    background: rgba(239, 176, 41, 0.98);
+    border-color: var(--accent);
+    color: var(--background);
+    transform: translateY(-8px);
+}
+
+.portfolio-card:hover::before {
+    background: linear-gradient(180deg, rgba(239, 176, 41, 0.1), rgba(239, 176, 41, 0.5));
+}
+
+
+/* =========================================
+   CARD NUMBER
+========================================= */
+
+.card-number {
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    color: var(--accent);
+}
+
+
+.portfolio-card:hover .card-number {
+    color: var(--background);
+}
+
+
+/* =========================================
+   CARD CONTENT
+========================================= */
+
+.card-content p {
+    margin-bottom: 10px;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+    color: var(--accent);
+}
+
+
+.portfolio-card:hover .card-content p {
+    color: var(--background);
+}
+
+
+.card-content h2 {
+    margin-bottom: 15px;
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 42px;
+
+    font-weight: 500;
+
+    line-height: 1;
+
+    color: var(--white);
+}
+
+
+.portfolio-card:hover .card-content h2 {
+    color: var(--background);
+}
+
+
+.card-description {
+    max-width: 220px;
+
+    font-size: 11px;
+
+    line-height: 1.7;
+
+    color: var(--white);
+
+    opacity: 0.75;
+}
+
+
+.portfolio-card:hover .card-description {
+    color: var(--background);
+
+    opacity: 0.85;
+}
+
+
+/* =========================================
+   CARD ARROW
+========================================= */
+
+.card-arrow {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(255, 255, 255, 0.5);
+
+    border-radius: 50%;
+
+    color: var(--white);
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+.portfolio-card:hover .card-arrow {
+    background: var(--background);
+
+    border-color: var(--background);
+
+    color: var(--accent);
+
+    transform: rotate(45deg);
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.home-footer {
+    width: 100%;
+
+    padding: 22px 6%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.25);
+
+    color: var(--white);
+
+    font-size: 9px;
+    font-weight: 600;
+
+    letter-spacing: 1.5px;
+}
+
+
+.home-footer p:last-child {
+    color: var(--accent);
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+}
+
+
+/* =========================================
+   CATEGORY FULLSCREEN VIEW
+========================================= */
+
+.category-view {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 100;
+
+    padding: 80px 6%;
+
+    background: var(--background);
+
+    color: var(--white);
+
+    overflow-y: auto;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translateY(100%);
+
+    transition:
+        opacity 0.5s ease,
+        visibility 0.5s ease,
+        transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+
+.category-view.active {
+    opacity: 1;
+
+    visibility: visible;
+
+    transform: translateY(0);
+}
+
+
+/* =========================================
+   CATEGORY CONTENT
+========================================= */
+
+.category-content {
+    max-width: 1400px;
+
+    margin: 0 auto;
+}
+
+
+.category-content .eyebrow {
+    margin-bottom: 12px;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 5px;
+
+    color: var(--accent);
+}
+
+
+.category-content h2 {
+    margin-bottom: 15px;
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: clamp(50px, 7vw, 90px);
+
+    font-weight: 500;
+
+    line-height: 0.9;
+
+    color: var(--white);
+}
+
+
+.category-content > p:not(.eyebrow) {
+    max-width: 600px;
+
+    margin-bottom: 50px;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+
+    color: var(--white);
+
+    opacity: 0.8;
+}
+
+
+/* =========================================
+   BACK BUTTON
+========================================= */
+
+.close-category {
+    position: fixed;
+
+    top: 30px;
+    right: 6%;
+
+    z-index: 110;
+
+    padding: 12px 18px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    border: 1px solid rgba(255, 255, 255, 0.4);
+
+    background: transparent;
+
+    color: var(--white);
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease;
+}
+
+
+.close-category:hover {
+    background: var(--accent);
+
+    border-color: var(--accent);
+
+    color: var(--background);
+}
+
+
+/* =========================================
+   PHOTO GRID
+========================================= */
+
+.photo-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 18px;
+}
+
+
+/* =========================================
+   PHOTO CARD
+========================================= */
+
+/* =========================
+   GALLERY PHOTO BOX
+========================= */
+
+.photo-card {
+    position: relative;
+    width: 100%;
+    padding: 0;
+    border: none;
+    background: rgba(255, 255, 255, 0.08);
+    cursor: pointer;
+    overflow: hidden;
+    aspect-ratio: 1 / 1;
+    display: block;
+    border-radius: 12px;
+}
+
+.photo-card img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    filter: none;
+    transform: scale(1);
+    opacity: 0;
+    transition: transform 0.45s ease, opacity 0.35s ease;
+}
+
+.photo-card img.is-loaded {
+    opacity: 1;
+}
+
+.photo-card:hover img,
+.photo-card:focus-visible img {
+    transform: scale(1.04);
+}
+
+
+/* =========================
+   FULL IMAGE LIGHTBOX
+========================= */
+
+.image-lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px;
+
+    background: rgba(0, 0, 0, 0.92);
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transition:
+        opacity 0.35s ease,
+        visibility 0.35s ease;
+}
+
+.image-lightbox.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.image-lightbox img {
+    display: block;
+
+    /* Show the COMPLETE image */
+    width: auto;
+    height: auto;
+
+    max-width: 95vw;
+    max-height: 90vh;
+
+    object-fit: contain;
+
+    /* IMPORTANT: no blur here */
+    filter: none;
+
+    border-radius: 8px;
+
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+
+/* =========================================
+   IMAGE LIGHTBOX
+========================================= */
+
+.image-lightbox {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 200;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 40px;
+
+    background: rgba(15, 30, 60, 0.96);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition:
+        opacity 0.4s ease,
+        visibility 0.4s ease;
+}
+
+
+.image-lightbox.active {
+    opacity: 1;
+
+    visibility: visible;
+}
+
+
+/* =========================================
+   LIGHTBOX CONTENT
+========================================= */
+
+.lightbox-content {
+    width: auto;
+    max-width: 92vw;
+    max-height: 90vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.lightbox-content img {
+    max-width: 92vw;
+    max-height: 85vh;
+    opacity: 0;
+    transition: opacity 0.25s ease;
+}
+
+.lightbox-content img.is-loaded {
+    opacity: 1;
+
+    width: auto;
+    height: auto;
+
+    display: block;
+
+    object-fit: contain;
+
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+}
+
+
+/* =========================================
+   CLOSE LIGHTBOX
+========================================= */
+
+.close-lightbox {
+    position: absolute;
+
+    top: 30px;
+    right: 40px;
+
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(255, 255, 255, 0.5);
+
+    border-radius: 50%;
+
+    background: transparent;
+
+    color: var(--white);
+
+    font-size: 18px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+.close-lightbox:hover {
+    background: var(--accent);
+
+    border-color: var(--accent);
+
+    color: var(--background);
+
+    transform: rotate(90deg);
+}
+
+
+/* =========================================
+   MOBILE / TABLET
+========================================= */
+
+@media (max-width: 1000px) {
+
+    .portfolio-categories {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    .photo-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .navbar {
+        padding: 22px 5%;
+
+        flex-wrap: wrap;
+
+        gap: 20px;
+    }
+
+
+    .navigation {
+        order: 3;
+
+        width: 100%;
+
+        justify-content: center;
+
+        gap: 25px;
+
+        margin: 5px 0 0;
+    }
+
+
+    .portfolio-section {
+        padding: 45px 5% 60px;
+    }
+
+
+    .portfolio-categories {
+        grid-template-columns: 1fr;
+    }
+
+
+    .portfolio-card {
+        min-height: 280px;
+    }
+
+
+    .photo-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+
+    .category-view {
+        padding: 100px 5% 50px;
+    }
+
+
+    .category-content h2 {
+        font-size: 55px;
+    }
+
+
+    .category-content > p:not(.eyebrow) {
+        margin-bottom: 35px;
+    }
+
+
+    .close-category {
+        top: 20px;
+
+        right: 5%;
+
+        padding: 10px 14px;
+    }
+
+
+    .image-lightbox {
+        padding: 20px;
+    }
+
+
+    .lightbox-content {
+        max-width: 95vw;
+        max-height: 85vh;
+    }
+
+
+    .lightbox-content img {
+        max-width: 95vw;
+        max-height: 80vh;
+    }
+
+
+    .close-lightbox {
+        top: 20px;
+        right: 20px;
+
+        width: 42px;
+        height: 42px;
+    }
+
+
+    .home-footer {
+        padding: 18px 5%;
+
+        flex-direction: column;
+
+        gap: 8px;
+
+        text-align: center;
+    }
+
+}

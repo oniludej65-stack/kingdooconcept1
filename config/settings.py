@@ -11,21 +11,52 @@ https://docs.djangoproject.com/en/6.1/ref/settings/
 """
 
 from pathlib import Path
+from dotenv import load_dotenv
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+load_dotenv(BASE_DIR / ".env")
 
+SUPABASE_URL = os.getenv("SUPABASE_URL")
+SUPABASE_KEY = os.getenv("SUPABASE_KEY")
+RESEND_API_KEY = os.getenv("RESEND_API_KEY")
+RESEND_FROM_EMAIL = os.getenv("RESEND_FROM_EMAIL")
+RESEND_NOTIFICATION_EMAIL = os.getenv("RESEND_NOTIFICATION_EMAIL")
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/6.1/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-))&5uo1fr!+gr1frget(cp3hgo&k&5$r0erwb_maioj$oxg=fp'
+# Production values come from Vercel environment variables. Local development
+# keeps the existing LAN hosts and reads optional overrides from .env.
+SECRET_KEY = os.getenv('DJANGO_SECRET_KEY')
+if not SECRET_KEY:
+    if os.getenv('VERCEL'):
+        raise RuntimeError('Set DJANGO_SECRET_KEY in the Vercel project environment.')
+    SECRET_KEY = 'django-insecure-local-development-only-change-me'
+debug_default = 'False' if os.getenv('VERCEL') else 'True'
+DEBUG = os.getenv('DJANGO_DEBUG', debug_default).lower() in {'1', 'true', 'yes'}
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+ALLOWED_HOSTS = [
+    host.strip()
+    for host in os.getenv(
+        'DJANGO_ALLOWED_HOSTS',
+        '192.168.1.9,192.168.1.4,127.0.0.1,localhost',
+    ).split(',')
+    if host.strip()
+]
+if vercel_url := os.getenv('VERCEL_URL'):
+    ALLOWED_HOSTS.append(vercel_url.removeprefix('https://').removeprefix('http://'))
+if not DEBUG and '.vercel.app' not in ALLOWED_HOSTS:
+    ALLOWED_HOSTS.append('.vercel.app')
 
-ALLOWED_HOSTS = []
+CSRF_TRUSTED_ORIGINS = [
+    origin.strip()
+    for origin in os.getenv('CSRF_TRUSTED_ORIGINS', '').split(',')
+    if origin.strip()
+]
+if not DEBUG:
+    CSRF_TRUSTED_ORIGINS.append('https://*.vercel.app')
 
 
 # Application definition
@@ -43,6 +74,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -103,7 +135,14 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/6.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'en'
+
+LANGUAGES = [
+    ('en', 'English'),
+    ('fr', 'Français'),
+]
+
+LOCALE_PATHS = [BASE_DIR / 'locale']
 
 TIME_ZONE = 'UTC'
 
@@ -115,14 +154,18 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/6.1/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 
 # Email
 # https://docs.djangoproject.com/en/6.1/topics/email/#topic-email-configuration
 
-MAILERS = {
-    'default': {
-        'BACKEND': 'django.core.mail.backends.console.EmailBackend',
-    },
-}
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = os.getenv('GOOGLE_EMAIL')
+EMAIL_HOST_PASSWORD = os.getenv('GOOGLE_APP_PASSWORD')
+DEFAULT_FROM_EMAIL = os.getenv('GOOGLE_EMAIL')
+NOTIFICATION_EMAIL = os.getenv('GOOGLE_NOTIFICATION_EMAIL', os.getenv('GOOGLE_EMAIL'))

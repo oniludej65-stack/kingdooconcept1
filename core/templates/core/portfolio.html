@@ -1,0 +1,1245 @@
+{% load static i18n %}
+{% get_current_language as CURRENT_LANGUAGE %}
+
+<!DOCTYPE html>
+<html lang="{{ CURRENT_LANGUAGE }}">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>{% trans "Portfolio" %} | KingDoo Concepts</title>
+
+
+    <!-- GOOGLE FONTS -->
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- FONT AWESOME -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+
+    <!-- PORTFOLIO CSS -->
+
+    <link
+        rel="stylesheet"
+        href="{% static 'portfolio.css' %}?v=6"
+    >
+
+
+    <!-- PAGE TRANSITION CSS -->
+
+    <link
+        rel="stylesheet"
+        href="{% static 'page-transition.css' %}?v=11"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =================================================
+         PORTFOLIO PAGE
+    ================================================== -->
+
+    <div class="page-transition">
+
+        <main class="portfolio-page">
+
+
+            <!-- =================================================
+                 NAVIGATION
+            ================================================== -->
+
+            <header class="navbar">
+
+                <a
+                    href="{% url 'home' %}"
+                    class="brand page-link"
+                >
+                    KINGDOO
+                    <span>CONCEPTS</span>
+                </a>
+
+
+                <nav class="navigation">
+
+                    <a
+                        href="{% url 'home' %}"
+                        class="page-link"
+                    >
+                        {% trans "Home" %}
+                    </a>
+
+                    <a
+                        href="{% url 'portfolio' %}"
+                        class="page-link"
+                    >
+                        {% trans "Portfolio" %}
+                    </a>
+
+                    <a
+                        href="{% url 'about' %}"
+                        class="page-link"
+                    >
+                        {% trans "About" %}
+                    </a>
+
+                    <a
+                        href="{% url 'contact' %}"
+                        class="page-link"
+                    >
+                        {% trans "Contact" %}
+                    </a>
+
+                </nav>
+
+
+                <div class="social-icons">
+
+                    <a
+                        href="https://www.tiktok.com/@official_kingdoo?_r=1&_t=ZS-9AMX7PrAzjw"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="KingDoo on TikTok"
+                    >
+                        <i class="fa-brands fa-tiktok"></i>
+                    </a>
+
+                    <a
+                        href="https://www.instagram.com/official_kingdoo/?hl=en"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Instagram"
+                    >
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                <form class="language-switch" action="{% url 'set_language' %}" method="post" aria-label="{% trans 'Choose language' %}">
+                    {% csrf_token %}
+                    <input type="hidden" name="next" value="{{ request.get_full_path }}">
+                    <button type="submit" name="language" value="en" class="{% if CURRENT_LANGUAGE == 'en' %}active{% endif %}" aria-label="English">EN</button>
+                    <button type="submit" name="language" value="fr" class="{% if CURRENT_LANGUAGE == 'fr' %}active{% endif %}" aria-label="Français">FR</button>
+                </form>
+                </div>
+
+            </header>
+
+
+
+            <!-- =================================================
+                 PORTFOLIO CATEGORY SELECTION
+            ================================================== -->
+
+            <section class="portfolio-section">
+
+                <div class="portfolio-heading">
+                    <p class="eyebrow">KINGDOO CONCEPTS</p>
+                    <h1>{% trans "Our Portfolio" %}</h1>
+                    <p>{% trans "Explore our photography work across different moments, celebrations, and experiences." %}</p>
+                </div>
+
+
+
+                <!-- =================================================
+                     CATEGORY CARDS
+                ================================================== -->
+
+                <div class="portfolio-categories">
+
+
+                    <!-- PORTRAITS -->
+
+                    <button
+                        type="button"
+                        class="portfolio-card"
+                        data-category="portraits"
+                    >
+
+                        <span class="card-number">
+                            01
+                        </span>
+
+                        <div class="card-content">
+
+                            <p>
+                                {% trans "Photography" %}
+                            </p>
+
+                            <h2>
+                                {% trans "Portraits" %}
+                            </h2>
+
+                            <div class="card-description">
+                                {% trans "A visual collection of portrait sessions, people, and experiences." %}
+                            </div>
+
+                        </div>
+
+                        <span class="card-arrow">
+                            <i class="fa-solid fa-arrow-up"></i>
+                        </span>
+
+                    </button>
+
+
+
+                    <!-- EVENTS -->
+
+                    <button
+                        type="button"
+                        class="portfolio-card"
+                        data-category="events"
+                    >
+
+                        <span class="card-number">
+                            02
+                        </span>
+
+                        <div class="card-content">
+
+                            <p>
+                                {% trans "Photography" %}
+                            </p>
+
+                            <h2>
+                                {% trans "Events" %}
+                            </h2>
+
+                            <div class="card-description">
+                                {% trans "Capturing meaningful moments, atmosphere, people, and memories throughout special events." %}
+                            </div>
+
+                        </div>
+
+                        <span class="card-arrow">
+                            <i class="fa-solid fa-arrow-up"></i>
+                        </span>
+
+                    </button>
+
+
+
+                    <!-- UNIVERSITY -->
+
+                    <button
+                        type="button"
+                        class="portfolio-card"
+                        data-category="university"
+                    >
+
+                        <span class="card-number">
+                            03
+                        </span>
+
+                        <div class="card-content">
+
+                            <p>
+                                {% trans "Photography" %}
+                            </p>
+
+                            <h2>
+                                {% trans "University" %}
+                            </h2>
+
+                            <div class="card-description">
+                                {% trans "Capturing student life, university experiences, academic moments, and campus memories." %}
+                            </div>
+
+                        </div>
+
+                        <span class="card-arrow">
+                            <i class="fa-solid fa-arrow-up"></i>
+                        </span>
+
+                    </button>
+
+
+                    <!-- BABY SHOOT -->
+
+                    <button
+                        type="button"
+                        class="portfolio-card"
+                        data-category="baby-shoot"
+                    >
+
+                        <span class="card-number">
+                            04
+                        </span>
+
+                        <div class="card-content">
+
+                            <p>
+                                {% trans "Photography" %}
+                            </p>
+
+                            <h2>
+                                {% trans "Baby Shoot" %}
+                            </h2>
+
+                            <div class="card-description">
+                                {% trans "Sweet portraits celebrating little personalities, milestones, and growing families." %}
+                            </div>
+
+                        </div>
+
+                        <span class="card-arrow">
+                            <i class="fa-solid fa-arrow-up"></i>
+                        </span>
+
+                    </button>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 FOOTER
+            ================================================== -->
+
+            <footer class="home-footer">
+
+                <p>
+                    © 2026 by Kingdoo Consults
+                </p>
+
+                <p>
+                    KINGDOO CONCEPTS
+                </p>
+
+            </footer>
+
+        </main>
+
+    </div>
+
+
+
+    <!-- =================================================
+         FULLSCREEN CATEGORY GALLERY
+    ================================================== -->
+
+    <section
+        class="category-view"
+        id="categoryView"
+        aria-hidden="true"
+    >
+
+        <button
+            type="button"
+            class="close-category"
+            id="closeCategory"
+        >
+
+            <i class="fa-solid fa-arrow-down"></i>
+
+                <span>{% trans "Back to Portfolio" %}</span>
+
+        </button>
+
+
+        <div class="category-content">
+
+            <p
+                class="eyebrow"
+                id="categoryEyebrow"
+            >
+                {% trans "PHOTOGRAPHY" %}
+            </p>
+
+            <h2 id="categoryTitle"></h2>
+
+            <p id="categoryDescription"></p>
+
+
+            <!-- PHOTO GRID -->
+
+            <div
+                class="photo-grid"
+                id="photoGrid"
+            ></div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         FULLSCREEN IMAGE VIEWER
+    ================================================== -->
+
+    <section
+        class="image-lightbox"
+        id="imageLightbox"
+        aria-hidden="true"
+    >
+
+        <button
+            type="button"
+            class="close-lightbox"
+            id="closeLightbox"
+            aria-label="Close image"
+        >
+
+            <i class="fa-solid fa-xmark"></i>
+
+        </button>
+
+
+        <div class="lightbox-content">
+
+            <img
+                id="lightboxImage"
+                src=""
+                alt=""
+            >
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         PAGE TRANSITION JAVASCRIPT
+    ================================================== -->
+
+    <script src="{% static 'page-transition.js' %}?v=13"></script>
+
+
+
+    <!-- =================================================
+         PORTFOLIO JAVASCRIPT
+    ================================================== -->
+
+    <script>
+
+        document.addEventListener("DOMContentLoaded", function () {
+
+
+            /* =================================================
+               ELEMENTS
+            ================================================= */
+
+            const cards =
+                document.querySelectorAll(".portfolio-card");
+
+            const categoryView =
+                document.getElementById("categoryView");
+
+            const closeCategory =
+                document.getElementById("closeCategory");
+
+            const categoryTitle =
+                document.getElementById("categoryTitle");
+
+            const categoryDescription =
+                document.getElementById("categoryDescription");
+
+            const photoGrid =
+                document.getElementById("photoGrid");
+
+            const imageLightbox =
+                document.getElementById("imageLightbox");
+
+            const lightboxImage =
+                document.getElementById("lightboxImage");
+
+            const closeLightbox =
+                document.getElementById("closeLightbox");
+
+            let lightboxRequestId = 0;
+
+            function showLightboxSource(source, requestId, onReady) {
+                const candidate = new Image();
+                candidate.decoding = "async";
+
+                const reveal = function () {
+                    const isStaleRequest =
+                        requestId !== lightboxRequestId ||
+                        !imageLightbox.classList.contains("active");
+
+                    if (isStaleRequest) return;
+
+                    lightboxImage.src = source;
+                    lightboxImage.classList.add("is-loaded");
+                };
+
+                const decodeAndReveal = function () {
+                    if (typeof candidate.decode !== "function") {
+                        reveal();
+                        if (onReady && requestId === lightboxRequestId) {
+                            onReady();
+                        }
+                        return;
+                    }
+
+                    const continueLoading = function () {
+                        reveal();
+                        if (onReady && requestId === lightboxRequestId) {
+                            onReady();
+                        }
+                    };
+
+                    candidate.decode().then(
+                        continueLoading,
+                        continueLoading
+                    );
+                };
+
+                candidate.addEventListener(
+                    "load",
+                    decodeAndReveal,
+                    { once: true }
+                );
+                candidate.addEventListener(
+                    "error",
+                    function () {
+                        console.error("Lightbox image failed to load:", source);
+                        if (onReady && requestId === lightboxRequestId) {
+                            onReady();
+                        }
+                    },
+                    { once: true }
+                );
+
+                candidate.src = source;
+
+                if (candidate.complete && candidate.naturalWidth > 0) {
+                    decodeAndReveal();
+                }
+            }
+
+
+
+            /* =================================================
+               CATEGORY DATA
+               
+               thumbnail = blurred preview
+               full      = original clear image
+            ================================================== */
+
+            const categoryData = {
+
+
+                /* =================================================
+                   BABY SHOOT
+                ================================================== */
+
+                "baby-shoot": {
+
+                    title:
+                        "{% trans 'Baby Shoot Photography' %}",
+
+                    description:
+                        "{% trans 'Sweet portraits celebrating little personalities, milestones, and growing families.' %}",
+
+                    images: [
+
+                        {
+                            thumbnail: "{% static '50.jpg' %}",
+                            full: "{% static '50.jpg' %}",
+                            alt: "Baby portrait 01"
+                        },
+
+                        {
+                            thumbnail: "{% static '51.jpg' %}",
+                            full: "{% static '51.jpg' %}",
+                            alt: "Baby portrait 02"
+                        },
+
+                        {
+                            thumbnail: "{% static '52.jpg' %}",
+                            full: "{% static '52.jpg' %}",
+                            alt: "Baby portrait 03"
+                        },
+
+                        {
+                            thumbnail: "{% static '53.jpg' %}",
+                            full: "{% static '53.jpg' %}",
+                            alt: "Baby portrait 04"
+                        },
+
+                        {
+                            thumbnail: "{% static '54.jpg' %}",
+                            full: "{% static '54.jpg' %}",
+                            alt: "Baby portrait 05"
+                        },
+
+                        {
+                            thumbnail: "{% static '55.jpg' %}",
+                            full: "{% static '55.jpg' %}",
+                            alt: "Baby portrait 06"
+                        },
+
+                        {
+                            thumbnail: "{% static '56.jpg' %}",
+                            full: "{% static '56.jpg' %}",
+                            alt: "Baby portrait 07"
+                        }
+
+                    ]
+
+                },
+
+
+                /* =================================================
+                   EVENTS
+                ================================================== */
+
+                events: {
+
+                    title:
+                        "{% trans 'Events Photography' %}",
+
+                    description:
+                        "{% trans 'Capturing meaningful moments, atmosphere, people, and memories throughout special events.' %}",
+
+                    images: [
+
+                        {
+                            thumbnail: "{% static '60.jpg' %}",
+                            full: "{% static '60.jpg' %}",
+                            alt: "Events photograph 01"
+                        },
+
+                        {
+                            thumbnail: "{% static '61.jpg' %}",
+                            full: "{% static '61.jpg' %}",
+                            alt: "Events photograph 02"
+                        },
+
+                        {
+                            thumbnail: "{% static '62.jpg' %}",
+                            full: "{% static '62.jpg' %}",
+                            alt: "Events photograph 03"
+                        },
+
+                        {
+                            thumbnail: "{% static '63.jpg' %}",
+                            full: "{% static '63.jpg' %}",
+                            alt: "Events photograph 04"
+                        },
+
+                        {
+                            thumbnail: "{% static '64.jpg' %}",
+                            full: "{% static '64.jpg' %}",
+                            alt: "Events photograph 05"
+                        },
+
+                        {
+                            thumbnail: "{% static '65.jpg' %}",
+                            full: "{% static '65.jpg' %}",
+                            alt: "Events photograph 06"
+                        },
+
+                        {
+                            thumbnail: "{% static '66.jpg' %}",
+                            full: "{% static '66.jpg' %}",
+                            alt: "Events photograph 07"
+                        },
+
+                        {
+                            thumbnail: "{% static '67.jpg' %}",
+                            full: "{% static '67.jpg' %}",
+                            alt: "Events photograph 08"
+                        },
+
+                        {
+                            thumbnail: "{% static '68.jpg' %}",
+                            full: "{% static '68.jpg' %}",
+                            alt: "Events photograph 09"
+                        },
+
+                        {
+                            thumbnail: "{% static '69.jpg' %}",
+                            full: "{% static '69.jpg' %}",
+                            alt: "Events photograph 10"
+                        }
+
+                    ]
+
+                },
+
+
+                /* =================================================
+                   BESTOWER EVENTS
+                ================================================== */
+
+                portraits: {
+
+                    title:
+                        "{% trans 'Portrait Photography' %}",
+
+                    description:
+                        "{% trans 'A collection of expressive portraits, personal style, and memorable moments.' %}",
+
+                    images: [
+
+                        {
+                            thumbnail: "{% static '11.jpg' %}",
+                            full: "{% static '11.jpg' %}",
+                            alt: "Portrait photograph 01"
+                        },
+
+                        {
+                            thumbnail: "{% static '12.jpg' %}",
+                            full: "{% static '12.jpg' %}",
+                            alt: "Portrait photograph 02"
+                        },
+
+                        {
+                            thumbnail: "{% static '13.jpg' %}",
+                            full: "{% static '13.jpg' %}",
+                            alt: "Portrait photograph 03"
+                        },
+
+                        {
+                            thumbnail: "{% static '14.jpg' %}",
+                            full: "{% static '14.jpg' %}",
+                            alt: "Portrait photograph 04"
+                        },
+
+                        {
+                            thumbnail: "{% static '15.jpg' %}",
+                            full: "{% static '15.jpg' %}",
+                            alt: "Portrait photograph 05"
+                        },
+
+                        {
+                            thumbnail: "{% static '16.jpg' %}",
+                            full: "{% static '16.jpg' %}",
+                            alt: "Portrait photograph 06"
+                        },
+
+                        {
+                            thumbnail: "{% static '17.jpg' %}",
+                            full: "{% static '17.jpg' %}",
+                            alt: "Portrait photograph 07"
+                        },
+
+                        {
+                            thumbnail: "{% static '18.jpg' %}",
+                            full: "{% static '18.jpg' %}",
+                            alt: "Portrait photograph 08"
+                        },
+
+                        {
+                            thumbnail: "{% static '19.jpg' %}",
+                            full: "{% static '19.jpg' %}",
+                            alt: "Portrait photograph 09"
+                        },
+
+                        {
+                            thumbnail: "{% static '20.jpg' %}",
+                            full: "{% static '20.jpg' %}",
+                            alt: "Portrait photograph 10"
+                        },
+
+                        {
+                            thumbnail: "{% static '21.jpg' %}",
+                            full: "{% static '21.jpg' %}",
+                            alt: "Portrait photograph 11"
+                        },
+
+                        {
+                            thumbnail: "{% static '22.jpg' %}",
+                            full: "{% static '22.jpg' %}",
+                            alt: "Portrait photograph 12"
+                        }
+
+                    ]
+
+                },
+
+
+                /* =================================================
+                   UNIVERSITY
+                ================================================== */
+
+                university: {
+
+                    title:
+                        "{% trans 'University Photography' %}",
+
+                    description:
+                        "{% trans 'Capturing student life, university experiences, academic moments, and campus memories.' %}",
+
+                    cover:
+                        "{% static '39.jpg' %}",
+
+                    images: [
+
+                        {
+                            thumbnail: "{% static '33.jpg' %}",
+                            full: "{% static '33.jpg' %}",
+                            alt: "University photograph 01"
+                        },
+
+                        {
+                            thumbnail: "{% static '34.jpg' %}",
+                            full: "{% static '34.jpg' %}",
+                            alt: "University photograph 02"
+                        },
+
+                        {
+                            thumbnail: "{% static '35.jpg' %}",
+                            full: "{% static '35.jpg' %}",
+                            alt: "University photograph 03"
+                        },
+
+                        {
+                            thumbnail: "{% static '36.jpg' %}",
+                            full: "{% static '36.jpg' %}",
+                            alt: "University photograph 04"
+                        },
+
+                        {
+                            thumbnail: "{% static '37.jpg' %}",
+                            full: "{% static '37.jpg' %}",
+                            alt: "University photograph 05"
+                        },
+
+                        {
+                            thumbnail: "{% static '38.jpg' %}",
+                            full: "{% static '38.jpg' %}",
+                            alt: "University photograph 06"
+                        },
+
+                        {
+                            thumbnail: "{% static '39.jpg' %}",
+                            full: "{% static '39.jpg' %}",
+                            alt: "University photograph 07"
+                        },
+
+                        {
+                            thumbnail: "{% static '40.jpg' %}",
+                            full: "{% static '40.jpg' %}",
+                            alt: "University photograph 08"
+                        },
+
+                        {
+                            thumbnail: "{% static '41.jpg' %}",
+                            full: "{% static '41.jpg' %}",
+                            alt: "University photograph 09"
+                        }
+
+                    ]
+
+                }
+
+            };
+
+            const thumbnailDirectory = "{% static 'thumbnails/' %}";
+
+            function getThumbnailPath(imagePath) {
+                return thumbnailDirectory + imagePath.slice(imagePath.lastIndexOf("/") + 1);
+            }
+
+
+
+            /* =================================================
+               OPEN CATEGORY
+            ================================================== */
+
+            cards.forEach(function (card) {
+
+                const category =
+                    card.getAttribute("data-category");
+
+                const data =
+                    categoryData[category];
+
+                if (data && data.images && data.images.length) {
+                    const previewImage = getThumbnailPath(data.cover || data.images[0].thumbnail);
+                    const preview = new Image();
+
+                    const showPreview = function () {
+                        const reveal = function () {
+                            card.style.setProperty(
+                                "--card-image",
+                                "url('" + previewImage + "')"
+                            );
+                            card.classList.add("has-preview");
+                        };
+
+                        if (typeof preview.decode !== "function") {
+                            reveal();
+                            return;
+                        }
+
+                        preview.decode().then(reveal, reveal);
+                    };
+
+                    preview.addEventListener("load", showPreview, { once: true });
+                    preview.addEventListener(
+                        "error",
+                        function () {
+                            console.error(
+                                "Portfolio category preview failed to load:",
+                                previewImage
+                            );
+                        },
+                        { once: true }
+                    );
+                    preview.src = previewImage;
+
+                    if (preview.complete && preview.naturalWidth > 0) {
+                        showPreview();
+                    }
+                }
+
+                card.addEventListener("click", function () {
+
+                    const category =
+                        card.getAttribute("data-category");
+
+                    const data =
+                        categoryData[category];
+
+                    if (!data) {
+                        return;
+                    }
+
+
+                    categoryTitle.textContent =
+                        data.title;
+
+
+                    categoryDescription.textContent =
+                        data.description;
+
+
+                    photoGrid.innerHTML = "";
+
+
+                    /* CREATE GALLERY */
+
+                    data.images.forEach(function (image) {
+
+                        const photo =
+                            document.createElement("button");
+
+                        photo.type =
+                            "button";
+
+                        photo.className =
+                            "photo-card";
+
+                        photo.setAttribute("aria-label", image.alt);
+
+                        /*
+                         * Store the original full image.
+                         */
+
+                        photo.dataset.image =
+                            image.full;
+
+                        photo.dataset.thumbnail =
+                            getThumbnailPath(image.thumbnail);
+
+
+                        photo.dataset.alt =
+                            image.alt;
+
+
+                        /*
+                         * Create the gallery thumbnail.
+                         */
+
+                        const img =
+                            document.createElement("img");
+
+                        img.className =
+                            "photo-card-image";
+
+                        img.alt =
+                            image.alt;
+
+                        img.loading =
+                            "lazy";
+
+                        img.decoding =
+                            "async";
+
+                        const revealImage = function () {
+                            if (typeof img.decode !== "function") {
+                                img.classList.add("is-loaded");
+                                return;
+                            }
+
+                            img.decode().then(
+                                function () {
+                                    img.classList.add("is-loaded");
+                                },
+                                function () {
+                                    img.classList.add("is-loaded");
+                                }
+                            );
+                        };
+
+                        img.addEventListener(
+                            "load",
+                            revealImage,
+                            { once: true }
+                        );
+
+                        img.addEventListener(
+                            "error",
+                            function () {
+                                console.error(
+                                    "Portfolio thumbnail failed to load:",
+                                    img.src
+                                );
+                            },
+                            { once: true }
+                        );
+
+                        img.src =
+                            getThumbnailPath(image.thumbnail);
+
+                        if (img.complete && img.naturalWidth > 0) {
+                            revealImage();
+                        }
+
+
+                        photo.appendChild(img);
+
+                        photoGrid.appendChild(photo);
+
+                    });
+
+
+                    categoryView.classList.add("active");
+
+                    categoryView.setAttribute(
+                        "aria-hidden",
+                        "false"
+                    );
+
+                    document.body.classList.add(
+                        "category-open"
+                    );
+
+                });
+
+            });
+
+
+
+            /* =================================================
+               CLOSE CATEGORY
+            ================================================== */
+
+            function closeCategoryView() {
+
+                categoryView.classList.remove("active");
+
+                categoryView.setAttribute(
+                    "aria-hidden",
+                    "true"
+                );
+
+                document.body.classList.remove(
+                    "category-open"
+                );
+
+            }
+
+
+            closeCategory.addEventListener(
+                "click",
+                closeCategoryView
+            );
+
+
+
+            /* =================================================
+               OPEN FULL IMAGE
+            ================================================== */
+
+            photoGrid.addEventListener(
+                "click",
+                function (event) {
+
+                    const photo =
+                        event.target.closest(".photo-card");
+
+                    if (!photo) {
+                        return;
+                    }
+
+
+                    const image =
+                        photo.dataset.image;
+
+                    const alt =
+                        photo.dataset.alt;
+
+
+                    if (!image) {
+                        console.error(
+                            "Full image path is missing."
+                        );
+
+                        return;
+                    }
+
+
+                    lightboxImage.alt = alt;
+                    lightboxImage.classList.remove("is-loaded");
+                    lightboxRequestId += 1;
+                    const requestId = lightboxRequestId;
+
+
+                    /*
+                     * Show lightbox.
+                     */
+
+                    imageLightbox.classList.add(
+                        "active"
+                    );
+
+                    imageLightbox.setAttribute(
+                        "aria-hidden",
+                        "false"
+                    );
+
+                    showLightboxSource(
+                        photo.dataset.thumbnail || image,
+                        requestId,
+                        function () {
+                            showLightboxSource(image, requestId);
+                        }
+                    );
+
+                }
+            );
+
+
+
+            /* =================================================
+               CLOSE FULL IMAGE
+            ================================================== */
+
+            function closeImageLightbox() {
+                lightboxRequestId += 1;
+
+                imageLightbox.classList.remove(
+                    "active"
+                );
+
+                imageLightbox.setAttribute(
+                    "aria-hidden",
+                    "true"
+                );
+
+
+                setTimeout(function () {
+
+                    if (
+                        !imageLightbox.classList.contains(
+                            "active"
+                        )
+                    ) {
+
+                        lightboxImage.src = "";
+
+                        lightboxImage.alt = "";
+                        lightboxImage.classList.remove("is-loaded");
+
+                    }
+
+                }, 350);
+
+            }
+
+
+            closeLightbox.addEventListener(
+                "click",
+                closeImageLightbox
+            );
+
+
+
+            /* =================================================
+               CLICK OUTSIDE IMAGE
+            ================================================== */
+
+            imageLightbox.addEventListener(
+                "click",
+                function (event) {
+
+                    if (
+                        event.target === imageLightbox
+                    ) {
+
+                        closeImageLightbox();
+
+                    }
+
+                }
+            );
+
+
+
+            /* =================================================
+               ESCAPE KEY
+            ================================================== */
+
+            document.addEventListener(
+                "keydown",
+                function (event) {
+
+                    if (
+                        event.key === "Escape" &&
+                        imageLightbox.classList.contains(
+                            "active"
+                        )
+                    ) {
+
+                        closeImageLightbox();
+
+                        return;
+
+                    }
+
+
+                    if (
+                        event.key === "Escape" &&
+                        categoryView.classList.contains(
+                            "active"
+                        )
+                    ) {
+
+                        closeCategoryView();
+
+                    }
+
+                }
+            );
+
+        });
+
+    </script>
+
+</body>
+
+</html>

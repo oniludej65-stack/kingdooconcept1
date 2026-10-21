@@ -1,0 +1,49 @@
+{% load static i18n %}
+{% get_current_language as CURRENT_LANGUAGE %}
+<!DOCTYPE html>
+<html lang="{{ CURRENT_LANGUAGE }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% trans "About" %} | KingDoo Concepts</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'about.css' %}?v=3">
+    <link rel="stylesheet" href="{% static 'page-transition.css' %}?v=11">
+</head>
+<body>
+    <main class="about-page page-transition">
+        <header class="about-navbar">
+            <a class="about-brand" href="{% url 'home' %}" aria-label="KingDoo Concepts home">{% trans "About KingDoo" %}</a>
+            <nav class="about-navigation" aria-label="Main navigation">
+                <a href="{% url 'home' %}">{% trans "Home" %}</a>
+                <a href="{% url 'portfolio' %}">{% trans "Portfolio" %}</a>
+                <a href="{% url 'about' %}" aria-current="page">{% trans "About" %}</a>
+                <a href="{% url 'contact' %}">{% trans "Contact" %}</a>
+            </nav>
+            <div class="about-socials">
+                <a href="https://www.instagram.com/official_kingdoo/?hl=en" target="_blank" rel="noopener noreferrer" aria-label="KingDoo on Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.tiktok.com/@official_kingdoo?_r=1&_t=ZS-9AMX7PrAzjw" target="_blank" rel="noopener noreferrer" aria-label="KingDoo on TikTok"><i class="fa-brands fa-tiktok"></i></a>
+            <form class="language-switch" action="{% url 'set_language' %}" method="post" aria-label="{% trans 'Choose language' %}">
+                {% csrf_token %}
+                <input type="hidden" name="next" value="{{ request.get_full_path }}">
+                <button type="submit" name="language" value="en" class="{% if CURRENT_LANGUAGE == 'en' %}active{% endif %}" aria-label="English">EN</button>
+                <button type="submit" name="language" value="fr" class="{% if CURRENT_LANGUAGE == 'fr' %}active{% endif %}" aria-label="Français">FR</button>
+            </form>
+            </div>
+        </header>
+
+        <section class="about-content" aria-labelledby="about-title">
+            <img class="about-photo" src="{% static '15.jpg' %}" alt="Portrait of a KingDoo Concepts subject">
+            <div class="about-copy">
+                <h1 id="about-title">{% trans "About KingDoo" %}</h1>
+                <p>{% trans "At KINGDOO CONCEPTS, we believe every moment has a story worth preserving. We are a creative photography brand dedicated to capturing authentic moments, meaningful celebrations, and the people who make them unforgettable. From portraits and weddings to events and lifestyle photography, our approach combines creativity, attention to detail, and a genuine understanding of the moment." %}</p>
+                <p>{% trans "We don't simply take photographs. We create visual memories that allow you to revisit the emotions, people, and experiences that matter most." %}</p>
+                <p class="about-signoff">{% trans "Your moment. Your story. Your legacy." %}</p>
+            </div>
+        </section>
+    </main>
+    <script src="{% static 'page-transition.js' %}?v=13"></script>
+    <script src="{% static 'about.js' %}?v=2"></script>
+</body>
+</html>

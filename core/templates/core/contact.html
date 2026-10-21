@@ -1,0 +1,69 @@
+{% load static i18n %}
+{% get_current_language as CURRENT_LANGUAGE %}
+<!DOCTYPE html>
+<html lang="{{ CURRENT_LANGUAGE }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#102A43">
+    <title>{% trans "Contact" %} | KingDoo Concepts</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'contact.css' %}?v=4">
+    <link rel="stylesheet" href="{% static 'page-transition.css' %}?v=13">
+</head>
+<body>
+    <main class="contact-page page-transition">
+        <header class="contact-navbar">
+            <a class="contact-brand" href="{% url 'home' %}" aria-label="KingDoo Concepts home">
+                <img src="{% static 'BRAND2.png' %}" alt="KingDoo Concepts">
+            </a>
+            <nav class="contact-navigation" aria-label="Main navigation">
+                <a href="{% url 'home' %}">{% trans "Home" %}</a>
+                <a href="{% url 'portfolio' %}">{% trans "Portfolio" %}</a>
+                <a href="{% url 'about' %}">{% trans "About" %}</a>
+                <a href="{% url 'contact' %}" aria-current="page">{% trans "Contact" %}</a>
+            </nav>
+            <div class="contact-actions">
+                <form class="language-switch" action="{% url 'set_language' %}" method="post" aria-label="{% trans 'Choose language' %}">
+                    {% csrf_token %}
+                    <input type="hidden" name="next" value="{{ request.get_full_path }}">
+                    <button type="submit" name="language" value="en" class="{% if CURRENT_LANGUAGE == 'en' %}active{% endif %}" aria-label="English">EN</button>
+                    <button type="submit" name="language" value="fr" class="{% if CURRENT_LANGUAGE == 'fr' %}active{% endif %}" aria-label="Français">FR</button>
+                </form>
+                <a href="https://www.instagram.com/official_kingdoo/?hl=en" target="_blank" rel="noopener noreferrer" aria-label="KingDoo on Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.tiktok.com/@official_kingdoo?_r=1&_t=ZS-9AMX7PrAzjw" target="_blank" rel="noopener noreferrer" aria-label="KingDoo on TikTok"><i class="fa-brands fa-tiktok"></i></a>
+            </div>
+        </header>
+
+        <section class="contact-content" aria-labelledby="contact-title">
+            <div class="contact-copy">
+                <p class="contact-eyebrow">{% trans "KINGDOO CONCEPTS · PHOTOGRAPHY" %}</p>
+                <h1 id="contact-title">{% trans "Tell us what" %}<br><em>{% trans "matters to you." %}</em></h1>
+                <p class="contact-intro">{% trans "From a portrait session to a special celebration, we would love to hear what you are planning. Start a conversation with us on WhatsApp and we will help you take it from there." %}</p>
+                <a class="whatsapp-cta" href="{% if CURRENT_LANGUAGE == 'fr' %}https://wa.me/2250503093858?text=Bonjour%20KingDoo%20Concepts%2C%20je%20souhaiterais%20me%20renseigner%20sur%20une%20s%C3%A9ance%20photo.{% else %}https://wa.me/2250503093858?text=Hello%20KingDoo%20Concepts%2C%20I%E2%80%99d%20like%20to%20enquire%20about%20a%20photography%20session.{% endif %}" target="_blank" rel="noopener noreferrer">
+                    <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+                    <span>{% trans "Chat with us on WhatsApp" %}</span>
+                    <i class="fa-solid fa-arrow-up-right-from-square cta-arrow" aria-hidden="true"></i>
+                </a>
+                <p class="contact-phone-label">{% trans "Direct WhatsApp line" %}</p>
+                <a class="contact-phone" href="https://wa.me/2250503093858" target="_blank" rel="noopener noreferrer">+225 05 03 09 38 58</a>
+                <p class="contact-location"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> {% trans "Based in Côte d’Ivoire" %}</p>
+            </div>
+
+            <div class="contact-visual" aria-label="KingDoo photography highlights">
+                <div class="contact-photo-main"><img src="{% static '15.jpg' %}" alt="Portrait photographed by KingDoo Concepts"></div>
+                <div class="contact-photo-accent"><img src="{% static '60.jpg' %}" alt="A celebration captured by KingDoo Concepts"></div>
+                <div class="contact-visual-note"><span class="note-star">✳</span><span>{% trans "Your story, thoughtfully captured." %}</span></div>
+            </div>
+        </section>
+
+        <footer class="contact-footer">
+            <a href="{% url 'home' %}">← {% trans "Back to the home page" %}</a>
+            <span>© 2026 KingDoo Concepts</span>
+            <span>{% trans "Abidjan · Côte d’Ivoire" %}</span>
+        </footer>
+    </main>
+    <script src="{% static 'page-transition.js' %}?v=13"></script>
+</body>
+</html>

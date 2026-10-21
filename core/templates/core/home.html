@@ -1,0 +1,147 @@
+{% load static i18n %}
+{% get_current_language as CURRENT_LANGUAGE %}
+<!DOCTYPE html>
+<html lang="{{ CURRENT_LANGUAGE }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#284F90">
+    <title>KingDoo Concepts | Photography</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'styles.css' %}?v=5">
+    <link rel="stylesheet" href="{% static 'page-transition.css' %}?v=13">
+</head>
+<body>
+<main class="site page-transition">
+    <section class="hero" id="top">
+        <img class="hero-image" src="{% static 'bg3.jpg' %}" alt="KingDoo Concepts photography">
+        <div class="hero-shade"></div>
+        <header class="site-header">
+            <a href="{% url 'home' %}" class="brand" aria-label="KingDoo Concepts home">
+                <img src="{% static 'BRAND2.png' %}" alt="KingDoo Concepts">
+            </a>
+            <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
+            <nav class="main-nav" aria-label="Main navigation">
+                <a href="{% url 'home' %}" aria-current="page">{% trans "Home" %}</a>
+                <a href="#about">{% trans "About" %}</a>
+                <a href="#services">{% trans "Services" %}</a>
+                <a href="#events">{% trans "Events" %}</a>
+                <a href="#work">{% trans "Our work" %}</a>
+                <a href="#baby-shoot">{% trans "Baby Shoot" %}</a>
+                <a href="#approach">{% trans "Why KingDoo" %}</a>
+            </nav>
+            <div class="header-actions">
+                <form class="language-switch" action="{% url 'set_language' %}" method="post" aria-label="{% trans 'Choose language' %}">
+                    {% csrf_token %}
+                    <input type="hidden" name="next" value="{{ request.get_full_path }}">
+                    <button type="submit" name="language" value="en" class="{% if CURRENT_LANGUAGE == 'en' %}active{% endif %}" aria-label="English">EN</button>
+                    <button type="submit" name="language" value="fr" class="{% if CURRENT_LANGUAGE == 'fr' %}active{% endif %}" aria-label="Français">FR</button>
+                </form>
+                <a class="header-cta" href="{% url 'contact' %}">{% trans "Book a session" %}<span>↗</span></a>
+            </div>
+        </header>
+        <div class="hero-copy">
+            <p class="kicker">{% trans "KINGDOO CONCEPTS · PHOTOGRAPHY STUDIO" %}</p>
+            <h1>{% trans "Moments" %}<br><em>{% trans "made timeless." %}</em></h1>
+            <p class="hero-intro">{% trans "Honest images. Beautiful stories. Photographs made to bring you back to how it felt." %}</p>
+            <a class="button button-light" href="{% url 'portfolio' %}">{% trans "Explore our work" %}<span>↗</span></a>
+        </div>
+        <div class="hero-bottom"><span>{% trans "PORTRAITS · WEDDINGS · EVENTS" %}</span><a href="#about">{% trans "SCROLL TO EXPLORE" %}<i class="fa-solid fa-arrow-down"></i></a><span>01 — 07</span></div>
+    </section>
+
+    <section class="intro section-pad" id="about">
+        <div class="section-label"><span>01</span><span>{% trans "A little about us" %}</span></div>
+        <div class="intro-grid">
+            <div class="intro-title"><p class="eyebrow">{% trans "THE ART OF REMEMBERING" %}</p><h2>{% trans "Your story, seen" %}<br><em>{% trans "beautifully." %}</em></h2></div>
+            <div class="intro-copy"><p>{% trans "At KingDoo Concepts, we believe every moment has a story worth preserving. We create thoughtful photographs of the people, celebrations and little details that make your life yours." %}</p><p>{% trans "From portraits and weddings to events and lifestyle photography, we bring care, creativity and a calm presence to every frame." %}</p><a class="text-link" href="#approach">{% trans "Our approach" %}<span>↗</span></a></div>
+        </div>
+        <div class="stats-row"><div><strong>01</strong><span>{% trans "Thoughtfully planned" %}</span></div><div><strong>02</strong><span>{% trans "Captured with care" %}</span></div><div><strong>03</strong><span>{% trans "Made to be kept" %}</span></div></div>
+    </section>
+
+    <section class="services section-pad" id="services">
+        <div class="section-label"><span>02</span><span>{% trans "What we do" %}</span></div>
+        <div class="services-heading"><h2>{% trans "Made for" %}<br><em>{% trans "your moments." %}</em></h2><a class="text-link" href="{% url 'contact' %}">{% trans "Let's create together" %}<span>↗</span></a></div>
+        <div class="service-list">
+            <a href="#portrait-collection" class="service-row"><span>01</span><h3>{% trans "Portraits" %}</h3><p>{% trans "Personality, presence and all the little things that make you, you." %}</p><b>↗</b></a>
+            <a href="#events" class="service-row"><span>02</span><h3>{% trans "Events" %}</h3><p>{% trans "The people, energy and moments that bring a celebration to life." %}</p><b>↗</b></a>
+            <a href="#baby-shoot" class="service-row"><span>03</span><h3>{% trans "Baby Shoot" %}</h3><p>{% trans "Sweet portraits celebrating little personalities, milestones, and growing families." %}</p><b>↗</b></a>
+            <a href="#university-collection" class="service-row"><span>04</span><h3>{% trans "University life" %}</h3><p>{% trans "Campus life and the memories made along the way." %}</p><b>↗</b></a>
+        </div>
+    </section>
+
+    <section class="collections section-pad">
+        <div class="section-label"><span>03</span><span>{% trans "Explore our photography" %}</span></div>
+        <div class="featured-head"><h2>{% trans "Stories in" %}<br><em>{% trans "every season." %}</h2><a class="text-link" href="{% url 'portfolio' %}">{% trans "View all collections" %}<span>↗</span></a></div>
+        <div class="collection-grid">
+            <a id="portrait-collection" class="collection-card" href="{% url 'portfolio' %}"><img src="{% static '15.jpg' %}" alt="Portrait photography"><span class="collection-number">01 / {% trans "PORTRAITS" %}</span><h3>{% trans "Portraits" %}<b>↗</b></h3><p>{% trans "Expressions, personality and the details that make you, you." %}</p></a>
+            <a class="collection-card" href="#events"><img src="{% static '60.jpg' %}" alt="Event photography"><span class="collection-number">02 / {% trans "EVENTS" %}</span><h3>{% trans "Events" %}<b>↗</b></h3><p>{% trans "The people, energy and moments that bring a celebration to life." %}</p></a>
+            <a class="collection-card" href="#baby-shoot"><img src="{% static '50.jpg' %}" alt="Baby shoot photography"><span class="collection-number">03 / {% trans "BABY SHOOT" %}</span><h3>{% trans "Baby Shoot" %}<b>↗</b></h3><p>{% trans "Sweet portraits celebrating little personalities, milestones, and growing families." %}</p></a>
+            <a id="university-collection" class="collection-card" href="{% url 'portfolio' %}"><img src="{% static '39.jpg' %}" alt="University students in suits"><span class="collection-number">04 / {% trans "UNIVERSITY" %}</span><h3>{% trans "University life" %}<b>↗</b></h3><p>{% trans "Campus life and the memories made along the way." %}</p></a>
+        </div>
+    </section>
+
+    <section class="baby-shoot section-pad" id="baby-shoot">
+        <div class="section-label"><span>04</span><span>{% trans "Baby Shoot" %}</span></div>
+        <div class="baby-shoot-heading"><h2>{% trans "Little moments," %}<br><em>{% trans "beautifully kept." %}</em></h2><p>{% trans "Sweet portraits celebrating little personalities, milestones, and growing families." %}</p></div>
+        <div class="baby-shoot-grid">
+            <figure><img src="{% static '50.jpg' %}" alt="Baby portrait in a red celebration dress"><figcaption>01</figcaption></figure>
+            <figure><img src="{% static '51.jpg' %}" alt="Smiling toddler portrait"><figcaption>02</figcaption></figure>
+            <figure><img src="{% static '52.jpg' %}" alt="Baby portrait with a balloon"><figcaption>03</figcaption></figure>
+            <figure><img src="{% static '53.jpg' %}" alt="Close-up baby portrait in red"><figcaption>04</figcaption></figure>
+            <figure><img src="{% static '54.jpg' %}" alt="Baby celebrating a birthday"><figcaption>05</figcaption></figure>
+            <figure><img src="{% static '55.jpg' %}" alt="Toddler in a traditional outfit"><figcaption>06</figcaption></figure>
+            <figure><img src="{% static '56.jpg' %}" alt="Smiling toddler in a traditional outfit"><figcaption>07</figcaption></figure>
+        </div>
+    </section>
+
+    <section class="events-gallery section-pad" id="events">
+        <div class="section-label"><span>05</span><span>{% trans "Events" %}</span></div>
+        <div class="baby-shoot-heading"><h2>{% trans "Moments to" %}<br><em>{% trans "celebrate." %}</em></h2><p>{% trans "The people, energy and moments that bring a celebration to life." %}</p></div>
+        <div class="baby-shoot-grid">
+            <figure><img src="{% static '60.jpg' %}" alt="Guests celebrating an award"><figcaption>01</figcaption></figure>
+            <figure><img src="{% static '61.jpg' %}" alt="Award presented at an event"><figcaption>02</figcaption></figure>
+            <figure><img src="{% static '62.jpg' %}" alt="Child dancing at a celebration"><figcaption>03</figcaption></figure>
+            <figure><img src="{% static '63.jpg' %}" alt="Family enjoying an event"><figcaption>04</figcaption></figure>
+            <figure><img src="{% static '64.jpg' %}" alt="Guest holding a certificate"><figcaption>05</figcaption></figure>
+            <figure><img src="{% static '65.jpg' %}" alt="Guest celebrating with a certificate"><figcaption>06</figcaption></figure>
+            <figure><img src="{% static '66.jpg' %}" alt="Guest taking photos at an event"><figcaption>07</figcaption></figure>
+            <figure><img src="{% static '67.jpg' %}" alt="Family celebrating a young award winner"><figcaption>08</figcaption></figure>
+            <figure><img src="{% static '68.jpg' %}" alt="Young award winner portrait"><figcaption>09</figcaption></figure>
+            <figure><img src="{% static '69.jpg' %}" alt="Young girl holding an award"><figcaption>10</figcaption></figure>
+        </div>
+    </section>
+
+    <section class="featured section-pad" id="work">
+        <div class="section-label"><span>06</span><span>{% trans "From behind the lens" %}</span></div>
+        <div class="featured-head"><h2>{% trans "Our recent" %}<br><em>{% trans "work." %}</em></h2><a class="text-link" href="{% url 'portfolio' %}">{% trans "View the portfolio" %}<span>↗</span></a></div>
+        <div class="photo-grid">
+            <a class="photo-card photo-tall" href="{% url 'portfolio' %}"><img src="{% static '16.jpg' %}" alt="Recent KingDoo portrait"><span>{% trans "Portrait story" %}<b>↗</b></span></a>
+            <a class="photo-card photo-short" href="#events"><img src="{% static '63.jpg' %}" alt="Recent KingDoo event"><span>{% trans "A day together" %}<b>↗</b></span></a>
+            <a class="photo-card photo-short" href="{% url 'portfolio' %}"><img src="{% static '34.jpg' %}" alt="Recent KingDoo university story"><span>{% trans "Campus moments" %}<b>↗</b></span></a>
+            <a class="photo-card photo-tall" href="{% url 'portfolio' %}"><img src="{% static '54.jpg' %}" alt="Recent KingDoo baby portrait"><span>{% trans "Baby story" %}<b>↗</b></span></a>
+        </div>
+    </section>
+
+    <section class="promise section-pad" id="approach">
+        <div class="promise-photo"><img src="{% static '41.jpg' %}" alt="KingDoo Concepts at work"></div>
+        <div class="promise-copy"><div class="section-label"><span>07</span><span>{% trans "The KingDoo feeling" %}</span></div><p class="eyebrow">{% trans "MORE THAN A PHOTOGRAPH" %}</p><h2>{% trans "Easy, thoughtful," %}<br><em>{% trans "entirely you." %}</em></h2><div class="promise-list"><p><span>01</span><b>{% trans "A relaxed experience" %}</b><small>{% trans "Space to be yourself, with gentle direction when you need it." %}</small></p><p><span>02</span><b>{% trans "Care in every detail" %}</b><small>{% trans "From our first conversation to the final photographs." %}</small></p><p><span>03</span><b>{% trans "Images that feel like you" %}</b><small>{% trans "Natural, expressive photographs with a lasting point of view." %}</small></p></div></div>
+    </section>
+
+    <section class="booking section-pad">
+        <p class="eyebrow">{% trans "YOUR MOMENT IS WAITING" %}</p><h2>{% trans "Let's make" %}<br><em>{% trans "something lasting." %}</em></h2><p>{% trans "Tell us what you are celebrating, dreaming up or simply hoping to remember." %}</p><a class="button button-dark" href="{% url 'contact' %}">{% trans "Book a session" %}<span>↗</span></a>
+    </section>
+    <footer class="site-footer"><a href="#top" class="footer-brand">KINGDOO <span>CONCEPTS</span></a><p>© 2026 KingDoo Concepts</p><div><a href="https://www.instagram.com/official_kingdoo/?hl=en" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a><a href="https://www.tiktok.com/@official_kingdoo?_r=1&_t=ZS-9AMX7PrAzjw" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a></div></footer>
+</main>
+<script>
+const menuButton = document.querySelector('.menu-toggle');
+const navigation = document.querySelector('.main-nav');
+menuButton.addEventListener('click', () => {
+    const open = menuButton.getAttribute('aria-expanded') === 'true';
+    menuButton.setAttribute('aria-expanded', String(!open));
+    navigation.classList.toggle('is-open', !open);
+});
+</script>
+<script src="{% static 'page-transition.js' %}?v=14"></script>
+</body>
+</html>

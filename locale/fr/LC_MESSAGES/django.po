@@ -1,0 +1,434 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: fr\n"
+
+msgid "Home"
+msgstr "Accueil"
+
+msgid "Portfolio"
+msgstr "Portfolio"
+
+msgid "About"
+msgstr "À propos"
+
+msgid "Contact"
+msgstr "Contact"
+
+msgid "Choose language"
+msgstr "Choisir la langue"
+
+msgid "About KingDoo"
+msgstr "À propos de KingDoo"
+
+msgid "At KINGDOO CONCEPTS, we believe every moment has a story worth preserving. We are a creative photography brand dedicated to capturing authentic moments, meaningful celebrations, and the people who make them unforgettable. From portraits and weddings to events and lifestyle photography, our approach combines creativity, attention to detail, and a genuine understanding of the moment."
+msgstr "Chez KINGDOO CONCEPTS, nous pensons que chaque instant raconte une histoire qui mérite d’être préservée. Notre marque de photographie créative capture des moments authentiques, des célébrations marquantes et les personnes qui les rendent inoubliables. Des portraits et mariages aux événements et à la photographie lifestyle, notre approche associe créativité, souci du détail et compréhension sincère de chaque instant."
+
+msgid "We don't simply take photographs. We create visual memories that allow you to revisit the emotions, people, and experiences that matter most."
+msgstr "Nous ne faisons pas que prendre des photos. Nous créons des souvenirs visuels qui vous permettent de revivre les émotions, les rencontres et les expériences qui comptent le plus."
+
+msgid "Your moment. Your story. Your legacy."
+msgstr "Votre instant. Votre histoire. Votre héritage."
+
+msgid "Contact KingDoo"
+msgstr "Contacter KingDoo"
+
+msgid "KingDoo is based in"
+msgstr "KingDoo est basé en"
+
+msgid "Ivory Coast"
+msgstr "Côte d’Ivoire"
+
+msgid "E-mail"
+msgstr "E-mail"
+
+msgid "WhatsApp"
+msgstr "WhatsApp"
+
+msgid "First Name"
+msgstr "Prénom"
+
+msgid "Last Name"
+msgstr "Nom de famille"
+
+msgid "Phone"
+msgstr "Téléphone"
+
+msgid "Message"
+msgstr "Message"
+
+msgid "Write your message here..."
+msgstr "Écrivez votre message ici…"
+
+msgid "Send Message"
+msgstr "Envoyer le message"
+
+msgid "Côte d’Ivoire"
+msgstr "Côte d’Ivoire"
+
+msgid "Afghanistan"
+msgstr "Afghanistan"
+
+msgid "Algeria"
+msgstr "Algérie"
+
+msgid "Angola"
+msgstr "Angola"
+
+msgid "United States"
+msgstr "États-Unis"
+
+msgid "France"
+msgstr "France"
+
+msgid "United Kingdom"
+msgstr "Royaume-Uni"
+
+msgid "Ghana"
+msgstr "Ghana"
+
+msgid "Nigeria"
+msgstr "Nigeria"
+
+msgid "Enter a telephone number."
+msgstr "Saisissez un numéro de téléphone."
+
+msgid "The number already includes"
+msgstr "Le numéro contient déjà"
+
+msgid "Remove the country code from this field."
+msgstr "Retirez l’indicatif de ce champ."
+
+msgid "This number appears to use"
+msgstr "Ce numéro semble utiliser l’indicatif"
+
+msgid "Select that country code above."
+msgstr "Sélectionnez cet indicatif ci-dessus."
+
+msgid "numbers must contain"
+msgstr "doivent contenir"
+
+msgid "digits after the country code."
+msgstr "chiffres après l’indicatif du pays."
+
+msgid "Capturing Life. Creating Legacy."
+msgstr "Capturer la vie. Créer un héritage."
+
+msgid "PHOTOGRAPHY • CREATIVITY • LEGACY"
+msgstr "PHOTOGRAPHIE • CRÉATIVITÉ • HÉRITAGE"
+
+msgid "We transform meaningful moments into timeless visual stories."
+msgstr "Nous transformons les moments précieux en récits visuels intemporels."
+
+msgid "Explore Our Work"
+msgstr "Découvrez nos créations"
+
+msgid "Our Portfolio"
+msgstr "Notre portfolio"
+
+msgid "Explore our photography work across different moments, celebrations, and experiences."
+msgstr "Découvrez nos photos de moments, de célébrations et d’expériences inoubliables."
+
+msgid "Photography"
+msgstr "Photographie"
+
+msgid "Graduation"
+msgstr "Remise de diplôme"
+
+msgid "Baby Shoot"
+msgstr "Séance bébé"
+
+msgid "BABY SHOOT"
+msgstr "SÉANCE BÉBÉ"
+
+msgid "Baby Shoot Photography"
+msgstr "Photographie de bébé"
+
+msgid "Sweet portraits celebrating little personalities, milestones, and growing families."
+msgstr "De tendres portraits qui célèbrent les petites personnalités, les étapes importantes et les familles qui s’agrandissent."
+
+msgid "Baby story"
+msgstr "Histoire de bébé"
+
+msgid "Little moments,"
+msgstr "Petits instants,"
+
+msgid "beautifully kept."
+msgstr "précieusement gardés."
+
+msgid "Moments to"
+msgstr "Des instants à"
+
+msgid "celebrate."
+msgstr "célébrer."
+
+msgid "KINGDOO CONCEPTS · PHOTOGRAPHY"
+msgstr "KINGDOO CONCEPTS · PHOTOGRAPHIE"
+
+msgid "Tell us what"
+msgstr "Parlez-nous de ce qui"
+
+msgid "matters to you."
+msgstr "compte pour vous."
+
+msgid "From a portrait session to a special celebration, we would love to hear what you are planning. Start a conversation with us on WhatsApp and we will help you take it from there."
+msgstr "D’une séance portrait à une célébration spéciale, nous serions ravis de découvrir votre projet. Écrivez-nous sur WhatsApp et nous vous aiderons à lui donner vie."
+
+msgid "Chat with us on WhatsApp"
+msgstr "Écrivez-nous sur WhatsApp"
+
+msgid "Direct WhatsApp line"
+msgstr "Ligne WhatsApp directe"
+
+msgid "Based in Côte d’Ivoire"
+msgstr "Basés en Côte d’Ivoire"
+
+msgid "Your story, thoughtfully captured."
+msgstr "Votre histoire, capturée avec soin."
+
+msgid "Back to the home page"
+msgstr "Retour à la page d’accueil"
+
+msgid "Abidjan · Côte d’Ivoire"
+msgstr "Abidjan · Côte d’Ivoire"
+
+msgid "Celebrating academic achievements, milestones, confidence, and memorable graduation moments."
+msgstr "Célébrons les réussites scolaires, les étapes importantes et les souvenirs inoubliables de remise de diplôme."
+
+msgid "Events"
+msgstr "Événements"
+
+msgid "Capturing meaningful moments, atmosphere, people, and memories throughout special events."
+msgstr "Nous capturons les moments marquants, l’ambiance, les personnes et les souvenirs de vos événements."
+
+msgid "Portraits"
+msgstr "Portraits"
+
+msgid "A visual collection of portrait sessions, people, and experiences."
+msgstr "Une collection de portraits, de personnes et d’expériences."
+
+msgid "University"
+msgstr "Université"
+
+msgid "Capturing student life, university experiences, academic moments, and campus memories."
+msgstr "Nous capturons la vie étudiante, les expériences universitaires et les souvenirs du campus."
+
+msgid "Back to Portfolio"
+msgstr "Retour au portfolio"
+
+msgid "PHOTOGRAPHY"
+msgstr "PHOTOGRAPHIE"
+
+msgid "Graduation Photography"
+msgstr "Photographie de remise de diplôme"
+
+msgid "Events Photography"
+msgstr "Photographie d’événements"
+
+msgid "Portrait Photography"
+msgstr "Photographie de portrait"
+
+msgid "University Photography"
+msgstr "Photographie universitaire"
+
+msgid "Click to see more brighter"
+msgstr "Cliquez pour voir plus clairement"
+
+msgid "Services"
+msgstr "Services"
+
+msgid "Our work"
+msgstr "Nos réalisations"
+
+msgid "Why KingDoo"
+msgstr "Pourquoi KingDoo"
+
+msgid "Book a session"
+msgstr "Réserver une séance"
+
+msgid "KINGDOO CONCEPTS · PHOTOGRAPHY STUDIO"
+msgstr "KINGDOO CONCEPTS · STUDIO PHOTO"
+
+msgid "Moments"
+msgstr "Des instants"
+
+msgid "made timeless."
+msgstr "pour toujours."
+
+msgid "Honest images. Beautiful stories. Photographs made to bring you back to how it felt."
+msgstr "Des images sincères. De belles histoires. Des photos qui vous font revivre chaque émotion."
+
+msgid "Explore our work"
+msgstr "Découvrir nos réalisations"
+
+msgid "PORTRAITS · WEDDINGS · EVENTS"
+msgstr "PORTRAITS · MARIAGES · ÉVÉNEMENTS"
+
+msgid "SCROLL TO EXPLORE"
+msgstr "FAITES DÉFILER POUR EXPLORER"
+
+msgid "A little about us"
+msgstr "Quelques mots sur nous"
+
+msgid "THE ART OF REMEMBERING"
+msgstr "L’ART DE SE SOUVENIR"
+
+msgid "Your story, seen"
+msgstr "Votre histoire,"
+
+msgid "beautifully."
+msgstr "mise en lumière."
+
+msgid "At KingDoo Concepts, we believe every moment has a story worth preserving. We create thoughtful photographs of the people, celebrations and little details that make your life yours."
+msgstr "Chez KingDoo Concepts, chaque instant mérite d’être préservé. Nous photographions avec soin les personnes, les célébrations et ces petits détails qui rendent votre histoire unique."
+
+msgid "From portraits and weddings to events and lifestyle photography, we bring care, creativity and a calm presence to every frame."
+msgstr "Portraits, mariages, événements ou instants de vie : nous apportons à chaque image notre créativité, notre attention et notre sérénité."
+
+msgid "Our approach"
+msgstr "Notre approche"
+
+msgid "Thoughtfully planned"
+msgstr "Préparé avec soin"
+
+msgid "Captured with care"
+msgstr "Saisi avec attention"
+
+msgid "Made to be kept"
+msgstr "Fait pour durer"
+
+msgid "What we do"
+msgstr "Nos services"
+
+msgid "Made for"
+msgstr "Pensé pour"
+
+msgid "your moments."
+msgstr "vos moments."
+
+msgid "Let's create together"
+msgstr "Créons ensemble"
+
+msgid "Personality, presence and all the little things that make you, you."
+msgstr "Votre personnalité, votre présence et tous ces détails qui vous rendent unique."
+
+msgid "Weddings"
+msgstr "Mariages"
+
+msgid "The joyful, unscripted story of a day you will remember forever."
+msgstr "Le récit spontané et joyeux d’une journée inoubliable."
+
+msgid "The atmosphere, the people and the moments in between."
+msgstr "L’ambiance, les invités et tous les instants entre les grands moments."
+
+msgid "Creative work"
+msgstr "Projets créatifs"
+
+msgid "Distinctive imagery for ideas, brands and new beginnings."
+msgstr "Des images singulières pour vos idées, votre marque et vos nouveaux départs."
+
+msgid "Explore our photography"
+msgstr "Découvrez nos photos"
+
+msgid "Stories in"
+msgstr "Des histoires à"
+
+msgid "every season."
+msgstr "chaque saison."
+
+msgid "View all collections"
+msgstr "Voir toutes les collections"
+
+msgid "PORTRAITS"
+msgstr "PORTRAITS"
+
+msgid "Expressions, personality and the details that make you, you."
+msgstr "Vos expressions, votre personnalité et les détails qui vous rendent unique."
+
+msgid "EVENTS"
+msgstr "ÉVÉNEMENTS"
+
+msgid "The people, energy and moments that bring a celebration to life."
+msgstr "Les personnes, l’énergie et les instants qui font vivre une célébration."
+
+msgid "GRADUATION"
+msgstr "REMISE DE DIPLÔME"
+
+msgid "A proud milestone, remembered with confidence and joy."
+msgstr "Une grande étape immortalisée avec fierté et joie."
+
+msgid "UNIVERSITY"
+msgstr "UNIVERSITÉ"
+
+msgid "University life"
+msgstr "Vie universitaire"
+
+msgid "Campus life and the memories made along the way."
+msgstr "La vie sur le campus et les souvenirs qui s’y créent."
+
+msgid "From behind the lens"
+msgstr "Derrière l’objectif"
+
+msgid "Our recent"
+msgstr "Nos dernières"
+
+msgid "work."
+msgstr "réalisations."
+
+msgid "View the portfolio"
+msgstr "Voir le portfolio"
+
+msgid "Portrait story"
+msgstr "Histoire de portrait"
+
+msgid "A day together"
+msgstr "Une journée ensemble"
+
+msgid "Campus moments"
+msgstr "Instants sur le campus"
+
+msgid "The next chapter"
+msgstr "Un nouveau chapitre"
+
+msgid "The KingDoo feeling"
+msgstr "L’expérience KingDoo"
+
+msgid "MORE THAN A PHOTOGRAPH"
+msgstr "BIEN PLUS QU’UNE PHOTO"
+
+msgid "Easy, thoughtful,"
+msgstr "Simple, attentionné,"
+
+msgid "entirely you."
+msgstr "pleinement vous."
+
+msgid "A relaxed experience"
+msgstr "Une séance en toute sérénité"
+
+msgid "Space to be yourself, with gentle direction when you need it."
+msgstr "Soyez vous-même, avec quelques conseils tout en douceur si besoin."
+
+msgid "Care in every detail"
+msgstr "Le soin du détail"
+
+msgid "From our first conversation to the final photographs."
+msgstr "De notre premier échange jusqu’à la livraison de vos photos."
+
+msgid "Images that feel like you"
+msgstr "Des images qui vous ressemblent"
+
+msgid "Natural, expressive photographs with a lasting point of view."
+msgstr "Des photos naturelles et expressives, pensées pour durer."
+
+msgid "YOUR MOMENT IS WAITING"
+msgstr "VOTRE MOMENT VOUS ATTEND"
+
+msgid "Let's make"
+msgstr "Créons"
+
+msgid "something lasting."
+msgstr "un souvenir durable."
+
+msgid "Tell us what you are celebrating, dreaming up or simply hoping to remember."
+msgstr "Parlez-nous de ce que vous célébrez, imaginez ou souhaitez simplement garder en mémoire."
